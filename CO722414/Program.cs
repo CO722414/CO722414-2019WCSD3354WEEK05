@@ -15,12 +15,18 @@ namespace CO722414
 
             var b = new birthday_party();
             b.SetupPartyList();
-            b.printPartyList();
+            Console.WriteLine(b.printPartyList());
+            Console.WriteLine(b.printPartyList_reverse());
         }
     }
     class TestQuestion2
+    {
+        public TestQuestion2()
+        {
+        }
+    }
 
-      class dog
+    class dog
         {
             public dog(string name, string breed)
             {
@@ -42,7 +48,9 @@ namespace CO722414
             public dog peanut;
             public dog fifi;
             public dog clarance;
-            public dog roy;
+        public dog giselle;
+        public dog lulu;
+        public dog roy;
 
             public dog head;
             public dog tail;
@@ -54,7 +62,9 @@ namespace CO722414
             {
                 peanut = new dog("peanut", "Bichon");
                 fifi = new dog("fifi", "Poodle");
-                clarance = new dog("Clarence", "German Sheppard");
+            lulu = new dog("lulu","Beagle");
+            giselle=new dog("giselle", "Border Collie");
+            clarance = new dog("Clarence", "German Sheppard");
                 roy = new dog("Roy", "Beagle");
 
                 peanut.prev_dog = null;
@@ -63,7 +73,11 @@ namespace CO722414
                 fifi.next_dog = clarance;
                 clarance.prev_dog = fifi;
                 clarance.next_dog = roy;
-                roy.prev_dog = clarance;
+            giselle.prev_dog = clarance;
+            giselle.next_dog = lulu;
+            lulu.prev_dog = fifi;
+            lulu.next_dog = roy;
+            roy.prev_dog = lulu;
                 roy.next_dog = null;
                 head = peanut;
                 tail = roy;
@@ -74,13 +88,32 @@ namespace CO722414
                 temporary = head;
                 while (temporary.next_dog != null)
                 {
-                    inviteList += temporary.dog_name + "__-";
-                }
-                return inviteList;
+             
+                    inviteList += temporary.dog_name + "*___*";
+                temporary = temporary.next_dog;
+            }
+            inviteList += temporary.dog_name + "*___*";
+            return inviteList;
             }
 
-            }
 
-        
+
+        public string printPartyList_reverse()
+        {
+            string inviteList = "*____*";
+            temporary = tail;
+            while (temporary.prev_dog != null)
+            {
+
+                inviteList += temporary.dog_name + "*___*";
+                temporary = temporary.prev_dog;
+            }
+            inviteList += temporary.dog_name + "*___*";
+            return inviteList;
+        }
+
     }
+
+
+}
 
