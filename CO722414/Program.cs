@@ -9,7 +9,16 @@ namespace CO722414
     class Program
     {
         static void Main(string[] args)
-        { }
+        {
+            var a = new TestQuestion2();
+            //a.PlayingWithForLoops();
+
+            var b = new birthday_party();
+            b.SetupPartyList();
+            b.printPartyList();
+        }
+    }
+    class TestQuestion2
 
       class dog
         {
@@ -19,9 +28,8 @@ namespace CO722414
                 dog_breed = breed;
             }
 
-            public dog()
-            {
-            }
+          
+            
 
             public string dog_name;
             public string dog_breed;
@@ -39,7 +47,9 @@ namespace CO722414
             public dog head;
             public dog tail;
             public dog temporary;
-            public void pea()
+            public void SetupPartyList()
+
+          
 
             {
                 peanut = new dog("peanut", "Bichon");
@@ -57,9 +67,20 @@ namespace CO722414
                 roy.next_dog = null;
                 head = peanut;
                 tail = roy;
+            }
+            public string printPartyList()
+            {
+                string inviteList = "*____*";
+                temporary = head;
+                while (temporary.next_dog != null)
+                {
+                    inviteList += temporary.dog_name + "__-";
+                }
+                return inviteList;
+            }
 
             }
 
-        }
+        
     }
-}
+
