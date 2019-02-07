@@ -9,34 +9,32 @@ namespace CO722414
     class Program
     {
         static void Main(string[] args)
+        { }
+
+      class dog
         {
+            public dog(string name, string breed)
+            {
+                dog_name = name;
+                dog_breed = breed;
+            }
+            public string dog_name;
+            public string dog_breed;
+            public dog next_dog;
+            public dog prev_dog;
 
-
-
-            var a = new TestQuestion2();
-            a.PlayingWithForLoops();
         }
-        class TestQuestion2
+        class birthday_party
         {
-            public int myFavouriteVariables = 0;
-            public void PlayingWithForLoops()
-            {
-                //write a For Loop to Add 10 Numbers
-                for (; MyMethod();)
-                {
-                    if (myFavouriteVariables > 10)
-                    {
-                        Console.WriteLine("i am so out of here!");
-                        break;
-                    }
-                    Console.WriteLine("oh no I have to go through this stupid loop again...");
-                }
-            }
-            public bool MyMethod()
-            {
-                myFavouriteVariables++;
-                return true;
-            }
+            public dog peanut;
+            public dog fifi;
+            public dog clarane;
+            public dog roy;
+
+            public dog head;
+            public dog tail;
+            public dog temporary;
+
         }
     }
 }
